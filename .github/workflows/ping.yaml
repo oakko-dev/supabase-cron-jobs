@@ -1,15 +1,12 @@
-name: Scheduled API Call
+name: Test Cron Job
 
 on:
   schedule:
     - cron: '*/1 * * * *'
+
 jobs:
-  call-api:
+  test_cron:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Call API
-        run: |
-          curl -X GET "https://supabase-cron-jobs.vercel.app/api/keep-alive"
+      - name: Show that the cron job is running
+        run: echo "The GitHub Actions cron job is running at $(date)"
