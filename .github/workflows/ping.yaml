@@ -1,15 +1,15 @@
-name: Ping Supabase database
+name: Scheduled API Call
 
 on:
   schedule:
-    # This cron job runs every 15 minutes. 
-    # You can adjust the schedule as needed.
-    # The timezone is UTC.
-    - cron: '*/5 * * * *'
-
+- cron: '*/1 * * * *'
 jobs:
-  ping:
+  call-api:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping the API
-        run: curl -s "https://supabase-cron-jobs.vercel.app/api/keep-alive"
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Call API
+        run: |
+          curl -X GET "https://supabase-cron-jobs.vercel.app/api/keep-alive"
