@@ -5,7 +5,7 @@ on:
     # This cron job runs every 15 minutes. 
     # You can adjust the schedule as needed.
     # The timezone is UTC.
-    - cron: '*/1 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   ping:
