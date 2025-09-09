@@ -1,4 +1,4 @@
-name: Test Cron Job
+name: Supabase keep-alive
 
 on:
   schedule:
@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show that the cron job is running
-        run: echo "The GitHub Actions cron job is running at $(date)"
+        run: curl -s "https://supabase-cron-jobs.vercel.app/api/keep-alive"
