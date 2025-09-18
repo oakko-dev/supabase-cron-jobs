@@ -8,6 +8,7 @@ export default antfu({
 	vue: true,
 	typescript: true,
 	jsonc: true,
+	yaml: true,
 	formatters: {
 		css: true,
 		html: true,
